@@ -1,0 +1,21 @@
+{
+    "name": "main",
+    "version": "1.0.0",
+    "description": "This app will allow a user to enter a bunch of information that will be used to generate the user's respective team.",
+    "main": "index.js",
+    "directories": {
+      "lib": "lib",
+      "test": "tests"
+    },
+    "scripts": {
+      "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "fs": "^0.0.1-security",
+      "inquirer": "^8.2.4",
+      "jest": "^28.1.1"
+    }
+  }
