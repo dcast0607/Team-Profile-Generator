@@ -9,11 +9,29 @@ const Intern = require('./lib/Intern');
 // to prompt the user. 
 const inquirer = require('inquirer');
 
+// We can use an array to hold our user input data. We can try to store the data as. 
+/*
+Array Element 0
+    [
+        {
+            name: managerName,
+            email: managerEmail,
+            id: managerId,
+            officeNumber: managerOfficeNumber
+        }
+    ]
+*/
+
+// We can cycle through this data to render an HTML page. 
+
+const userInputData = [];
+
 // Brings in the fs package so that we can use it. 
 const fs = require('fs');
 
 const renderHTMLData = () => {
     // TODO: Find a way to render the HTML file from the data that's entered.
+    console.log(userInputData);
 };
 
 const navMenu = () => {
@@ -40,7 +58,7 @@ const navMenu = () => {
                 case "Add an intern": internPrompts();
                     break;
                 default: 
-                    generateTeamData();
+                    renderHTMLData();
             }
         });
 };
