@@ -63,7 +63,7 @@ const managerPrompts = () => {
                     message: "Please enter your manager's email address: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid email address.
-                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                        return /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/.test(name);
                     }
                 },
                 {
@@ -121,7 +121,7 @@ const internPrompts = () => {
                     message: "Please enter your intern's email address: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid email address.
-                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                        return /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/.test(name);
                     }
                 },
                 {
@@ -179,7 +179,7 @@ const engineerPrompts = () => {
                     message: "Please enter your engineer's email address: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid email address.
-                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                        return /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/.test(name);
                     }
                 },
                 {
