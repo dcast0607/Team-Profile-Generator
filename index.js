@@ -130,7 +130,7 @@ const internPrompts = () => {
                     message: "Please enter your intern's school: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid school name. 
-                        return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,30}$/.test(name);
+                        return /^[a-zA-Z]/.test(name);
                     }
                 }
             ]
