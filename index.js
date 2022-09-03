@@ -70,22 +70,37 @@ const managerPrompts = () => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: "Please enter your manager's name",
+                    message: "Please enter your manager's name: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid first name and last name.
+                        return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,19}$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'id',
-                    message: "Please enter your manager's ID number",
+                    message: "Please enter your manager's ID number: ",
+                    // This regex will validate for a user entering an alpha numeric value.
+                    validate: function (name) {
+                        return /^[a-zA-Z0-9]+$/.test(name)
+                    }
                 },
                 {
                     type: 'input',
                     name: 'email',
-                    message: "Please enter your manager's email address",
+                    message: "Please enter your manager's email address: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid email address.
+                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'officeNumber',
-                    message: "Please enter your manager's office number",
+                    message: "Please enter your manager's office number: ",
+                    validate: function (name) {
+                        return /^[0-9]{1,4}$/.test(name);
+                    }
                 }
             ]
         )
@@ -113,22 +128,38 @@ const internPrompts = () => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: "Please enter your intern's name",
+                    message: "Please enter your intern's name: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid first name and last name.
+                        return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,19}$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'id',
-                    message: "Please enter your intern's ID number",
+                    message: "Please enter your intern's ID number: ",
+                    // This regex will validate for a user entering an alpha numeric value.
+                    validate: function (name) {
+                        return /^[a-zA-Z0-9]+$/.test(name)
+                    }
                 },
                 {
                     type: 'input',
                     name: 'email',
-                    message: "Please enter your intern's email address",
+                    message: "Please enter your intern's email address: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid email address.
+                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'school',
-                    message: "Please enter your intern's school",
+                    message: "Please enter your intern's school: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid school name. 
+                        return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,30}$/.test(name);
+                    }
                 }
             ]
         )
@@ -155,22 +186,38 @@ const engineerPrompts = () => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: "Please enter your engineer's name",
+                    message: "Please enter your engineer's name: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid first name and last name.
+                        return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,19}$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'id',
-                    message: "Please enter your engineer's ID number",
+                    message: "Please enter your engineer's ID number: ",
+                    // This regex will validate for a user entering an alpha numeric value.
+                    validate: function (name) {
+                        return /^[a-zA-Z0-9]+$/.test(name)
+                    }
                 },
                 {
                     type: 'input',
                     name: 'email',
-                    message: "Please enter your engineer's email address",
+                    message: "Please enter your engineer's email address: ",
+                    validate: function (name) {
+                        // This regex will validate for a user entering a valid email address.
+                        return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(name);
+                    }
                 },
                 {
                     type: 'input',
                     name: 'github',
-                    message: "Please enter your engineer's GitHub account",
+                    message: "Please enter your engineer's GitHub account (username): ",
+                    validate: function (name) {
+                        // Adding regex to accept a possible Github username. 
+                        return /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(name)
+                    }
                 }
 
             ]
