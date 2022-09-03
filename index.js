@@ -34,34 +34,6 @@ const renderHTMLData = () => {
     console.log(userInputData);
 };
 
-const navMenu = () => {
-    inquirer
-        .prompt(
-            [
-                {
-                    type: 'list',
-                    name: 'choice',
-                    message: "How would you like to proceed?",
-                    choices: [
-                        "Add an engineer",
-                        "Add an intern",
-                        "Create your team page",
-                    ]
-                }
-            ]
-        )
-        .then((userSelection) => {
-            console.log(userSelection);
-            switch (userSelection.Employee) {
-                case "Add an engineer": engineerPrompts();
-                    break;
-                case "Add an intern": internPrompts();
-                    break;
-                default: 
-                    renderHTMLData();
-            }
-        });
-};
 
 const managerPrompts = () => {
     inquirer
@@ -234,6 +206,35 @@ const engineerPrompts = () => {
 
             // TODO: Find a way to generate the HTML page from this data....
             navMenu();
+        });
+};
+
+const navMenu = () => {
+    inquirer
+        .prompt(
+            [
+                {
+                    type: 'list',
+                    name: 'choice',
+                    message: "How would you like to proceed?",
+                    choices: [
+                        "Add an engineer",
+                        "Add an intern",
+                        "Create your team page",
+                    ]
+                }
+            ]
+        )
+        .then((userSelection) => {
+            console.log(userSelection);
+            switch (userSelection.choice) {
+                case "Add an engineer": engineerPrompts();
+                    break;
+                case "Add an intern": internPrompts();
+                    break;
+                default: 
+                    renderHTMLData();
+            }
         });
 };
 
