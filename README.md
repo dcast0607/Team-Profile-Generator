@@ -11,3 +11,20 @@ the right employee data.
 
 ## Table of Contents:
 - [Overview](#overview)
+- [Usage](#usage)
+- [Demo](#demo)
+- [Licensing](#licensing)
+- [Contributors](#contributors)
+- [Questions](#questions)
+
+## Usage
+
+## Demo
+
+## Licensing
+
+## Contributors
+
+## Questions
+
+If you have any questions or concerns, please contact me via email. 
