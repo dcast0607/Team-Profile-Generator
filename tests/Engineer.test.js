@@ -1,6 +1,12 @@
 // Need to create testing to ensure that user record gets created correctly,
 // and that we are able to use the functions we created. 
  
+
+// This test file builds on top of our employee testing suite, we want to make
+// sure that we are able to create a new engineer object with some seed data, we
+// want to make sure that this data is associated to the right fields, and that 
+// we can use the existing functions available to the user record as well as the 
+// new function we introduced for the Engineer function. 
 const Engineer = require('../lib/Engineer');
 
 const testerEngineer = {
