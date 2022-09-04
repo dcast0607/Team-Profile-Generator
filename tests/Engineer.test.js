@@ -6,7 +6,7 @@
 // sure that we are able to create a new engineer object with some seed data, we
 // want to make sure that this data is associated to the right fields, and that 
 // we can use the existing functions available to the user record as well as the 
-// new function we introduced for the Engineer function. 
+// new function we introduced for the Engineer class. 
 const Engineer = require('../lib/Engineer');
 
 const testerEngineer = {
