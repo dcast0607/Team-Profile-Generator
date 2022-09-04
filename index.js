@@ -38,6 +38,7 @@ const renderHTMLData = () => {
 
     const renderedHTML = userDataParser(userInputData);
 
+    console.log(renderedHTML);
 
 };
 
