@@ -5,6 +5,9 @@ let managerUserData = [];
 let engineerUserData = [];
 let internUserData = [];
 
+// This is the master function that generates our HTML code. All we are doing here is returning
+// a string literal that contains our HTML code. We are also passing in variables that contain 
+// HTML code from the other user objects. 
 function renderBaseHTMLCode(managerCode, engineerCode, internCode) {
   return new Promise((resolve, reject) => {
     
@@ -36,6 +39,8 @@ function renderBaseHTMLCode(managerCode, engineerCode, internCode) {
 });
 };
 
+// This function is used to render the individual intern HTML code for each intern object that 
+// is passed into this function. 
 function renderInternHTMLCode(internData) {
   const internCode = [];
 
@@ -64,6 +69,8 @@ function renderInternHTMLCode(internData) {
   return internCode;
 };
 
+// This function is used to render the individual Engineer HTML code for each engineer object that 
+// is passed into this function. 
 function renderEngineerHTMLCode(engineerData) {
     const engineerCode = [];
     engineerData.forEach((engineer) => {
@@ -93,6 +100,8 @@ function renderEngineerHTMLCode(engineerData) {
     return engineerCode;
 };
 
+// This function is used to render the manager intern HTML code for each manager object that 
+// is passed into this function. 
 function renderManagerHTMLCode(managerData) {
     const managerCode = [];
     managerData.forEach((manager) => {
@@ -119,15 +128,19 @@ function renderManagerHTMLCode(managerData) {
     return managerCode;
 };
 
+// This is the function that is called from the index.js file, the purpose of this function
+// is to consume the data that we've collected from the index.js file and to send that data
+// to individual sections to render our HTML code. 
 function userDataParser(userData) {
   // Printing data passed by from the index.js file.
-  console.log(userData);
+  //console.log(userData);
 
-  // Validating the right user roles.
+  // Validating the right user roles. The purpose of this section of the function is to parse through
+  // the data and pull the user role so that we can segregate our different objects. 
   let i = 0;
   userData.forEach((user) => {
     let currentUser = i + 1;
-    console.log(`User ${currentUser} Role: `, user.getRole());
+    // console.log(`User ${currentUser} Role: `, user.getRole());
     i++;
 
     if (user.getRole() == "Manager") {
@@ -140,23 +153,32 @@ function userDataParser(userData) {
     console.log("We were not able to identify the user role.");
   });
 
+  // Once we've segregated each object we invoke it's individual function to render the HTML code
+  // for that user. 
+
+    // managerCode object will contain our manager code and we get this by calling the renderManagerHTMLCode
+    // function, we also pass the manager objects in the managerUserData argument.
     const managerCode = renderManagerHTMLCode(managerUserData);
 
-    console.log(managerCode);
+    // console.log(managerCode);
+
+    // Engineer and Intern code variables are defined by calling the function that will generate it's code. 
 
     const engineerCode = renderEngineerHTMLCode(engineerUserData);
 
-    console.log(engineerCode);
+    // console.log(engineerCode);
 
     const internCode = renderInternHTMLCode(internUserData);
 
-    console.log(internCode);
+    // console.log(internCode);
 
+    // Once we've collected the code for each employee object, we pass this code to our fetchRawHTMLCode
+    // function. This function will generate the entire html page code. 
     const fetchRawHTMLCode = async () => {
         const rawHTMLCode = await renderBaseHTMLCode(managerCode, engineerCode, internCode)
         .then((data) => {
-            console.log(data);
-            console.log(typeof(data));
+            // console.log(data);
+            // console.log(typeof(data));
             return new Promise((resolve, reject) => {
                 resolve(data);   
             });
@@ -170,12 +192,13 @@ function userDataParser(userData) {
         });
   };
 
-  console.log("Line 167", fetchRawHTMLCode());
-  console.log("Line 168", typeof(fetchRawHTMLCode()));
+  // console.log("Line 167", fetchRawHTMLCode());
+  // console.log("Line 168", typeof(fetchRawHTMLCode()));
 
   return new Promise((resolve, reject) => {
     resolve(fetchRawHTMLCode());
   });
 };
 
+// We export the function so that we can use it in our index.js file.
 module.exports = userDataParser;
