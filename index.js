@@ -1,9 +1,13 @@
 // Bringing in our class definitions from the lib directory. 
 
-const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+
+// Importing function that will be used to render HTML code. 
+
+const HTMLRenderer = require('./utils/renderHTML');
+
 
 // Brings in the inquirer package so that we can use it. We will use this
 // to prompt the user. 
@@ -32,6 +36,18 @@ const fs = require('fs');
 const renderHTMLData = () => {
     // TODO: Find a way to render the HTML file from the data that's entered.
     console.log(userInputData);
+
+    // Checking user role record for each entry entered in the console.
+    let i = 0;
+    userInputData.forEach((user) => {
+        let currentUser = i + 1; 
+        console.log(`User ${currentUser} Role: `, user.getRole());
+        i++;
+    });
+
+    // const renderedHTML = HTMLRenderer(userInputData);
+
+
 };
 
 
@@ -88,6 +104,8 @@ const managerPrompts = () => {
             );
 
             // TODO: Find a way to generate the HTML page from this data....
+            userInputData.push(addManagerData);
+            console.log(userInputData);
             navMenu();
         });
 
@@ -137,7 +155,7 @@ const internPrompts = () => {
         )
         .then((internAnswers) => {
             console.log(internAnswers);
-            const addInternDate = new Intern(
+            const addInternData = new Intern(
                 internAnswers.name,
                 internAnswers.id,
                 internAnswers.email,
@@ -145,7 +163,8 @@ const internPrompts = () => {
             );
 
             // TODO: Find a way to generate the HTML page from this data....
-
+            userInputData.push(addInternData);
+            console.log(userInputData);
             navMenu();
         });
 };
@@ -197,7 +216,7 @@ const engineerPrompts = () => {
         .then((engineerAnswers) => {
             console.log(engineerAnswers);
 
-            const addEngineerDate = new Engineer(
+            const addEngineerData = new Engineer(
                 engineerAnswers.name,
                 engineerAnswers.id,
                 engineerAnswers.email,
@@ -205,6 +224,8 @@ const engineerPrompts = () => {
             );
 
             // TODO: Find a way to generate the HTML page from this data....
+            userInputData.push(addEngineerData)
+            console.log(userInputData);
             navMenu();
         });
 };
