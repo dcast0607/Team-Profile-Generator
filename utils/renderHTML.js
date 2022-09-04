@@ -149,8 +149,10 @@ function userDataParser(userData) {
       engineerUserData.push(user);
     } else if (user.getRole() == "Intern") {
       internUserData.push(user);
+    } else
+    {
+        console.log("We were not able to identify the user role.");
     }
-    console.log("We were not able to identify the user role.");
   });
 
   // Once we've segregated each object we invoke it's individual function to render the HTML code

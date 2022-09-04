@@ -40,9 +40,24 @@ To run the test suit you can use the command `npm test`. You can find the tests 
 
 ## Demo
 
+- Running test suite demo: https://www.loom.com/share/001b94d408cf40faaf235b4dbaca5e26
+- Invoking application demo: https://www.loom.com/share/2ed65fe0285d47c7ab471159c9815ddd
+- User prompt/input demo: https://www.loom.com/share/4b03403a28dd4181b129b58a88c14615
+- Generated HTML demo: https://www.loom.com/share/18ca84102cbf48708626fa953d4d00be
+- Full walkthrough demo: https://www.loom.com/share/777f5d95e2f941e7b526db9b180a174c
+
 ## Licensing
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</br>
+[![License: Jest](https://img.shields.io/badge/License-Jest-brightgreen)]</br>
+[![License: FS](https://img.shields.io/badge/License-FS-yellowgreen)]</br>
+[![License: Inquirer](https://img.shields.io/badge/License-Inquirer-red)]</br>
+
 ## Contributors
+
+**Author:** Daniel Castro
+**Github:** https://github.com/dcast0607
+**Email:** dancastro.java@gmail.com
 
 ## Questions
 
