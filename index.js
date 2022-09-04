@@ -71,7 +71,7 @@ const managerPrompts = () => {
                 {
                     type: 'input',
                     name: 'name',
-                    message: "Please enter your manager's name: ",
+                    message: "Please enter your name: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid first name and last name.
                         return /^[A-Z][-'a-zA-Z]+,?\s[A-Z][-'a-zA-Z]{0,19}$/.test(name);
@@ -80,7 +80,7 @@ const managerPrompts = () => {
                 {
                     type: 'input',
                     name: 'id',
-                    message: "Please enter your manager's ID number: ",
+                    message: "Please enter your ID number: ",
                     // This regex will validate for a user entering an alpha numeric value.
                     validate: function (name) {
                         return /^[a-zA-Z0-9]+$/.test(name)
@@ -89,7 +89,7 @@ const managerPrompts = () => {
                 {
                     type: 'input',
                     name: 'email',
-                    message: "Please enter your manager's email address: ",
+                    message: "Please enter your email address: ",
                     validate: function (name) {
                         // This regex will validate for a user entering a valid email address.
                         return /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})$/.test(name);
@@ -98,7 +98,7 @@ const managerPrompts = () => {
                 {
                     type: 'input',
                     name: 'officeNumber',
-                    message: "Please enter your manager's office number: ",
+                    message: "Please enter your office number: ",
                     validate: function (name) {
                         return /^[0-9]{1,4}$/.test(name);
                     }

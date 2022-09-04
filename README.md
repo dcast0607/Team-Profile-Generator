@@ -49,9 +49,9 @@ To run the test suit you can use the command `npm test`. You can find the tests 
 ## Licensing
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</br>
-[![License: Jest](https://img.shields.io/badge/License-Jest-brightgreen)]</br>
-[![License: FS](https://img.shields.io/badge/License-FS-yellowgreen)]</br>
-[![License: Inquirer](https://img.shields.io/badge/License-Inquirer-red)]</br>
+![License: Jest](https://img.shields.io/badge/License-Jest-brightgreen)</br>
+![License: FS](https://img.shields.io/badge/License-FS-yellowgreen)</br>
+![License: Inquirer](https://img.shields.io/badge/License-Inquirer-red)</br>
 
 ## Contributors
 
