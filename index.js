@@ -33,13 +33,24 @@ const userInputData = [];
 // Brings in the fs package so that we can use it. 
 const fs = require('fs');
 
-const renderHTMLData = () => {
+const renderHTMLData = async () => {
     // TODO: Find a way to render the HTML file from the data that's entered.
 
-    const renderedHTML = userDataParser(userInputData);
-
-    console.log(renderedHTML);
-
+    const renderedHTMLCode = await userDataParser(userInputData)
+    .then((data) => {
+        fileData = data;
+        console.log(typeof(data));
+        fs.writeFileSync('./dist/index.html', fileData, (err) => {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("HTML file with team data has been created successfully, please navigate to the /src directory to view file.")
+            };
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 };
 
 

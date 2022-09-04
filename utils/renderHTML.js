@@ -6,7 +6,9 @@ let engineerUserData = [];
 let internUserData = [];
 
 function renderBaseHTMLCode(managerCode, engineerCode, internCode) {
-  return `
+  return new Promise((resolve, reject) => {
+    
+    resolve(`
     <DOCTYPE html>
     <html lang="en">
     <head>
@@ -30,7 +32,8 @@ function renderBaseHTMLCode(managerCode, engineerCode, internCode) {
         ${internCode}
         </div>
     </div>
-`;
+    `);
+});
 };
 
 function renderInternHTMLCode(internData) {
@@ -76,7 +79,10 @@ function renderEngineerHTMLCode(engineerData) {
                     <li>${engineer.name}</li>
                     <li>Engineer ID: ${engineer.id}</li>
                     <li>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-                    <li>Github: https://github.com${engineer.github}</li>
+                    <li>
+                    Github: 
+                        <a href="https://github.com/${engineer.github}">https://github.com/${engineer.github}</a>
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -132,6 +138,7 @@ function userDataParser(userData) {
       internUserData.push(user);
     }
     console.log("We were not able to identify the user role.");
+  });
 
     const managerCode = renderManagerHTMLCode(managerUserData);
 
@@ -145,16 +152,30 @@ function userDataParser(userData) {
 
     console.log(internCode);
 
-    const rawHTMLCode = renderBaseHTMLCode(
-      managerCode,
-      engineerCode,
-      internCode
-    );
+    const fetchRawHTMLCode = async () => {
+        const rawHTMLCode = await renderBaseHTMLCode(managerCode, engineerCode, internCode)
+        .then((data) => {
+            console.log(data);
+            console.log(typeof(data));
+            return new Promise((resolve, reject) => {
+                resolve(data);   
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 
-    console.log(rawHTMLCode);
+        return new Promise((resolve, reject) => {
+            resolve(rawHTMLCode);
+        });
+  };
 
-    return rawHTMLCode;
+  console.log("Line 167", fetchRawHTMLCode());
+  console.log("Line 168", typeof(fetchRawHTMLCode()));
+
+  return new Promise((resolve, reject) => {
+    resolve(fetchRawHTMLCode());
   });
-}
+};
 
 module.exports = userDataParser;
