@@ -6,7 +6,7 @@ const Intern = require('./lib/Intern');
 
 // Importing function that will be used to render HTML code. 
 
-const HTMLRenderer = require('./utils/renderHTML');
+const userDataParser = require('./utils/renderHTML');
 
 
 // Brings in the inquirer package so that we can use it. We will use this
@@ -35,17 +35,8 @@ const fs = require('fs');
 
 const renderHTMLData = () => {
     // TODO: Find a way to render the HTML file from the data that's entered.
-    console.log(userInputData);
 
-    // Checking user role record for each entry entered in the console.
-    let i = 0;
-    userInputData.forEach((user) => {
-        let currentUser = i + 1; 
-        console.log(`User ${currentUser} Role: `, user.getRole());
-        i++;
-    });
-
-    // const renderedHTML = HTMLRenderer(userInputData);
+    const renderedHTML = userDataParser(userInputData);
 
 
 };
